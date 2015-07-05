@@ -31,6 +31,7 @@ void CAN_INIT(void)
           CAN0CTL0_INITRQ=0;//退出初始化
           while (CAN0CTL1_INITAK);
           CAN0CTL0=0x08;
-          CAN0RIER=0x01;   //打开接收中断
+  //        CAN0RIER=0x01;   //节点2：打开接收中断
+          CAN0RIER=0x00;   //节点1：关闭接收中断
           CAN0TIER=0x00;   //关闭发送中断
 }
